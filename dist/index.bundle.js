@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `*,\n*::after,\n*::before {\n  box-sizing: border-box;\n}\n\n`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://weather-app/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);\n// Imports\n\n\n\nvar ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./images/background.jpg */ \"./src/images/background.jpg\"), __webpack_require__.b);\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n___CSS_LOADER_EXPORT___.push([module.id, \"@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yellowtail&display=swap);\"]);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `*,\n*::after,\n*::before {\n  box-sizing: border-box;\n  font-family: 'Roboto', sans-serif;\n  color: rgb(88, 91, 121);\n}\n\nhtml, body,\nh1, h2, h3, h4, h5, h6, \np, ul, ol, li, button {\n  margin: 0;\n  padding: 0;\n}\n\nul, ol, li {\n  list-style: none;\n} \n\na {\n  text-decoration: none;\n}\n\nsvg {\n  vertical-align: top;\n  fill: hsl(207, 99%, 43%);\n}\n\n.site-container {\n  min-height: 100vh;\n  padding: 2rem;\n  display: flex;\n  justify-content: center;\n}\n\n.background {\n  position: fixed;\n  top: 0;\n  left: 0;\n  height: 100vh;\n  width: 100vw;\n  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});\n  background-position: center;\n  background-size: cover;\n  z-index: -1;\n}\n\n.max-width {\n  width: 100%;\n  max-width: 720px;\n}\n\n.display-none {\n  display: none !important; \n}\n\n.logo h1 {\n  font-family: 'Yellowtail', cursive;\n  color: hsl(207, 99%, 43%);\n}\n\n.card {\n  padding: 1rem 2rem;\n  background-color: rgba(255, 255, 255, 0.5);\n  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);\n  border-radius: 1.5rem;\n}\n\n.initial.card {\n  padding: 2rem;\n  align-self: center;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.initial .logo h1 {\n  font-size: 5rem;\n}\n\n.initial .logo p {\n  font-size: 1.25rem;\n  margin-bottom: 2rem;\n}\n\n.initial .search-container {\n  max-width: 30rem;\n}\n\n.search-container {\n  position: relative;\n  width: 100%;\n  display: flex;\n  align-items: center;\n}\n\n.initial .search-icon {\n  height: 2rem;\n}\n\n.search-icon {\n  position: absolute;\n  left: 0.5rem;\n  fill: rgb(88, 91, 121);\n}\n\n.initial .search-box {\n  height: 3rem;\n  padding: 0.5rem 3rem;\n  font-size: 1.5rem;  \n}\n\n.search-box {\n  width: 100%;\n  background-color: hsla(0, 0%, 100%, 0.65);\n  border: 0;\n  border-radius: 1rem;\n  outline: 1px solid hsl(0, 0%, 85%, 0.85);\n}\n\n.search-box:hover {\n  background-color: hsla(0, 0%, 100%, 0.85);\n}\n\n.search-box:focus {\n  border: 0;\n  outline: 0;\n  box-shadow: 1px 1px 1px 1px inset rgba(0, 0, 0, 0.25);\n  background-color: hsla(0, 0%, 100%, 0.85);\n}\n\n.main {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n\n.header {\n  display: grid;\n  grid-template-columns: 1fr 2fr;\n}\n\n.header .logo h1 {\n  margin: 0 1rem 0 0;\n  white-space: nowrap;\n  color: hsl(207, 99%, 43%);\n}\n\n@media (max-width: 500px) {\n  .header {\n    grid-template-columns: 1fr;\n  }\n  \n  .header .logo h1 {\n    margin: 0 0 0.5rem 0;\n    text-align: center;\n  }\n}\n\n.header .search-container {\n  max-width: 30rem;\n}\n\n.header .search-icon {\n  height: 1.5rem;\n}\n\n.header .search-box {\n  height: 2rem;\n  width: 100%;\n  padding: 0.5rem 2rem;\n  font-size: 1rem;\n}\n\n.card h2 {\n  grid-area: header;\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n  color: hsl(207, 99%, 43%);\n}\n\n.card .last-updated {\n  font-size: 1.15rem;\n  font-weight: 400;\n}\n\n.current-weather .content {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-template-areas:\n    \"location location\"\n    \"icon     temp\"\n    \"icon     feels-like\"\n    \"text     text\";\n  justify-content: center;\n  gap: 0 1rem\n}\n\n.current-location {\n  grid-area: location;\n  font-size: 1.15rem;\n}\n\n.current-condition-icon {\n  grid-area: icon;\n  justify-self: end;\n}\n\n.current-temp {\n  grid-area: temp;\n  position: relative;\n  top: 0.5rem;\n  color: hsl(207, 99%, 43%);\n  font-size: 5rem;\n  font-weight: 500;\n}\n\n.current-temp span {\n  position: absolute;\n  bottom: 1.2rem;\n  left: 6.1rem;\n  color: hsl(207, 99%, 43%);\n  font-size: 1.5rem;\n  font-weight: 300;\n}\n\n.current-feels-like {\n  grid-area: feels-like;\n  position: relative;\n  top: -0.5rem;\n}\n\n.current-condition-text {\n  grid-area: text;\n}\n\n.conditions .content {\n  padding: 1rem 0;\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 0.25rem 2rem;\n}\n\n.conditions .content:first-child {\n  padding: 0 0 1rem 0;\n}\n\n.conditions .content:last-child {\n  padding: 1rem 0 0 0;\n}\n\n.conditions .content:not(:last-child) {\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  border-image: \n    linear-gradient(\n      90deg, \n      rgba(0,0,0,0) 0%, \n      hsl(235, 16%, 60%) 20%,\n      hsl(235, 16%, 60%) 50%, \n      hsl(235, 16%, 60%) 80%,\n      rgba(0,0,0,0) 100%\n    ) 1 0%;\n}\n\n.conditions .content > div {\n  display: grid;\n  gap: 0.25rem;\n}\n\n.condition-entry {\n  display: grid;\n  grid-template-columns: 1.75rem 2fr auto;\n  white-space: nowrap;\n}\n\n.condition-entry .astro {\n  grid-template-columns: 1fr auto;\n}\n\n.condition-entry > *:last-child {\n  justify-self: end;\n}\n\n.condition-entry > svg {\n  width: 1.25rem;\n}\n\n.astro > div {\n  display: grid;\n  grid-template-columns: 64px 1fr;\n  grid-template-areas: \n    \"icon entry-1\"\n    \"icon entry-2\"\n    \"icon entry-3\";\n  gap: 0.25rem;\n}\n\n.content.astro svg {\n  grid-area: icon;\n  width: 48px;\n  justify-self: center;\n  align-self: center;  \n}\n\n.forecast .content {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));\n  justify-items: center;\n  text-align: center;\n}\n\n.forecast .content > div {\n  width: 100%;\n}\n\n.forecast .content > div:not(:last-child) {\n  border-right-width: 1px;\n  border-right-style: solid;\n  border-image: \n    linear-gradient(\n      0deg, rgba(0,0,0,0) 0%, hsl(235, 16%, 60%) 50%, rgba(0,0,0,0) 100%\n    ) 1 100%;\n}\n\n.forecast .content > div > p:first-child {\n  font-size: 1.15rem;\n}\n\n.temp {\n  color: hsl(207, 99%, 43%);\n  font-weight: 500;\n}\n\n.forecast .temp {\n  font-size: 2.5rem;\n}\n\n.forecast-condition-icon {\n  width: 60%;\n}\n\n.forecast-precipitation {\n  display: flex;\n  justify-content: center;\n}\n\n.forecast-precipitation > svg {\n  width: 1.25rem;\n}\n\n@media (max-width: 600px) {\n  .forecast .content > div > p:first-child {\n    font-size: 1rem;\n  }\n\n  .temp {\n    font-size: 2rem;\n  }\n\n  .forecast-precipitation {\n    transform: scale(0.9);\n  }\n}\n\n.details-button {\n  margin-top: 1rem;\n  padding: 0.5rem 0.75rem;\n  background-color: hsl(207, 99%, 43%);\n  color: white;\n  border: 0;\n  border-radius: 0.75rem;\n  font-size: 0.9rem;\n  font-weight: 500;\n}\n\n.details-button:hover {\n  background-color: hsl(207, 99%, 46%);\n}\n\n.details-button:active {\n  background-color: hsl(207, 99%, 49%);\n}\n\n.detail-weather h3 {\n  padding: 1rem 0;\n  font-size: 1.25rem;\n}\n\n.detail-weather h3,\n.detail-entry:not(:last-child) {\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  border-image: \n  linear-gradient(\n    90deg, \n    rgba(0,0,0,0) 0%, \n    hsl(235, 16%, 60%) 20%,\n    hsl(235, 16%, 60%) 50%, \n    hsl(235, 16%, 60%) 80%,\n    rgba(0,0,0,0) 100%\n  ) 1 0%;\n}\n\n.detail-entry {\n  display: grid;\n  grid-template-columns: 1.2fr 1fr 2.75fr 1fr 2fr 2rem;\n  align-items: center;\n  gap: 0 1rem;\n}\n\n.detail-entry .temp {\n  font-size: 1.5rem;\n}\n\n.detail-entry .temp > span {\n  color: hsl(235, 16%, 60%);\n  font-size: 1.15rem;\n  font-weight: 400;\n}\n\n.detail-entry > div:not(:last-child) {\n  display: flex;\n  align-items: center;\n}\n\n.detail-entry svg {\n  width: 1.25rem;\n  margin-right: 0.25rem;\n}\n\n.detail-entry img {\n  width: 3rem;\n}\n\n.detail-entry > .conditions {\n  width: 100%;\n  grid-column: 1 / -1;\n  margin-bottom: 1rem;\n}\n\n.detail-entry > .daily {\n  display: flex;\n  padding: 0.5rem 0;\n  flex-direction: column;\n}\n\n.detail-entry > .daily > p:first-child {\n  font-size: 1.5rem;\n  font-weight: 500;\n}\n\n.detail-entry .day-night {\n  gap: 1rem;\n  grid-column: 1 / -1;\n  margin-bottom: 1rem;\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n}\n\n.day-night .content:first-child {\n  display: grid;\n  grid-template-columns: 2fr auto 1fr;\n  grid-template-areas: \n    \"day        icon  temp\"\n    \"condition  icon  temp\";\n  align-items: center;\n  gap: 0.25rem;\n}\n\n.day-night .content:first-child > p:first-child {\n  grid-area: day;\n  font-size: 1.5rem;\n}\n\n.day-night .content:first-child > p:nth-child(2) {\n  grid-area: condition;\n}\n\n.day-night .content:first-child > img {\n  grid-area: icon;\n  font-size: 1.5rem;\n}\n\n.day-night .content:first-child > .temp {\n  grid-area: temp;\n  font-size: 2rem;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://weather-app/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -27,6 +27,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module) => {
 
 eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\nmodule.exports = function (cssWithMappingToString) {\n  var list = [];\n\n  // return the list of modules as css string\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = \"\";\n      var needLayer = typeof item[5] !== \"undefined\";\n      if (item[4]) {\n        content += \"@supports (\".concat(item[4], \") {\");\n      }\n      if (item[2]) {\n        content += \"@media \".concat(item[2], \" {\");\n      }\n      if (needLayer) {\n        content += \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\");\n      }\n      content += cssWithMappingToString(item);\n      if (needLayer) {\n        content += \"}\";\n      }\n      if (item[2]) {\n        content += \"}\";\n      }\n      if (item[4]) {\n        content += \"}\";\n      }\n      return content;\n    }).join(\"\");\n  };\n\n  // import a list of modules into the list\n  list.i = function i(modules, media, dedupe, supports, layer) {\n    if (typeof modules === \"string\") {\n      modules = [[null, modules, undefined]];\n    }\n    var alreadyImportedModules = {};\n    if (dedupe) {\n      for (var k = 0; k < this.length; k++) {\n        var id = this[k][0];\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n    for (var _k = 0; _k < modules.length; _k++) {\n      var item = [].concat(modules[_k]);\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        continue;\n      }\n      if (typeof layer !== \"undefined\") {\n        if (typeof item[5] === \"undefined\") {\n          item[5] = layer;\n        } else {\n          item[1] = \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\").concat(item[1], \"}\");\n          item[5] = layer;\n        }\n      }\n      if (media) {\n        if (!item[2]) {\n          item[2] = media;\n        } else {\n          item[1] = \"@media \".concat(item[2], \" {\").concat(item[1], \"}\");\n          item[2] = media;\n        }\n      }\n      if (supports) {\n        if (!item[4]) {\n          item[4] = \"\".concat(supports);\n        } else {\n          item[1] = \"@supports (\".concat(item[4], \") {\").concat(item[1], \"}\");\n          item[4] = supports;\n        }\n      }\n      list.push(item);\n    }\n  };\n  return list;\n};\n\n//# sourceURL=webpack://weather-app/./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    options = {};\n  }\n  if (!url) {\n    return url;\n  }\n  url = String(url.__esModule ? url.default : url);\n\n  // If url is already wrapped in quotes, remove them\n  if (/^['\"].*['\"]$/.test(url)) {\n    url = url.slice(1, -1);\n  }\n  if (options.hash) {\n    url += options.hash;\n  }\n\n  // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n  if (/[\"'() \\t\\n]|(%20)/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, \"\\\\n\"), \"\\\"\");\n  }\n  return url;\n};\n\n//# sourceURL=webpack://weather-app/./node_modules/css-loader/dist/runtime/getUrl.js?");
 
 /***/ }),
 
@@ -116,7 +126,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weather */ \"./src/weather.js\");\n\n\n\nconst location = 'cebu';\nconst body = document.querySelector('body');\n\n(0,_weather__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\n  .then(\n    (value) => {\n      console.log(value);\n\n      const img = new Image();\n      img.src = `http:${value.current.condition.icon}`;\n\n      body.appendChild(img);\n    },\n    (error) => {\n      console.error(error);\n    },\n  );\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weather */ \"./src/weather.js\");\n\n\n\n(0,_weather__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\n  .then(\n    (value) => {\n      console.log(value);\n    },\n    (error) => {\n      console.error(error);\n    },\n  );\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ }),
 
@@ -127,6 +137,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst key = '9e51b5dc303949fa9ae60718230908';\nconst days = 3;\n\nconst getWeather = async () => {\n  const q = 'cebu';\n  const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${q}&days=${days}`, {\n    mode: 'cors',\n  });\n  const weather = await response.json();\n  return weather;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getWeather);\n\n\n//# sourceURL=webpack://weather-app/./src/weather.js?");
+
+/***/ }),
+
+/***/ "./src/images/background.jpg":
+/*!***********************************!*\
+  !*** ./src/images/background.jpg ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"ff36cf8905c717c4fd3c.jpg\";\n\n//# sourceURL=webpack://weather-app/./src/images/background.jpg?");
 
 /***/ })
 
@@ -156,6 +176,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -181,6 +204,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -195,6 +230,55 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
