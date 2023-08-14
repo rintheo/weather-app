@@ -16,7 +16,7 @@
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst key = '9e51b5dc303949fa9ae60718230908';\nconst days = 3;\n\nconst getWeather = async () => {\n  const q = 'cebu';\n  const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${q}&days=${days}`, {\n    mode: 'cors',\n  });\n  const weather = await response.json();\n  return weather;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getWeather);\n\n\n//# sourceURL=webpack://weather-app/./src/weather.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst key = '9e51b5dc303949fa9ae60718230908';\nconst days = 3;\n\nconst getWeather = async (location) => {\n  const q = location;\n  const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${q}&days=${days}`, {\n    mode: 'cors',\n  });\n  const weather = await response.json();\n  return weather;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getWeather);\n\n\n//# sourceURL=webpack://weather-app/./src/weather.js?");
 
 /***/ })
 
