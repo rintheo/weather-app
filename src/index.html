@@ -11,18 +11,18 @@
   <div class="site-container">
     <div class="background"></div>
 
-    <div class="initial card max-width display-none">
+    <div class="initial card max-width">
       <div class="logo">
         <h1>Tenki no Kyou</h1>
         <p>Weather forecast today, anywhere in the world.</p>
       </div>
       <div class="search-container">
         <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>magnify</title><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-        <input id="initialSearchBox" class="search-box" type="text" placeholder="Type a city...">
+        <input class="search-box" type="text" placeholder="Type a city...">
       </div>
     </div>
     
-    <main class="main max-width">
+    <main class="main max-width display-none">
       
       <header class="header card">
         <div class="logo">
@@ -30,22 +30,24 @@
         </div>
         <div class="search-container">
           <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>magnify</title><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-          <input id="initialSearchBox" class="search-box" type="text" placeholder="Type a city...">
+          <input class="search-box" type="text" placeholder="Type a city...">
         </div>
       </header>
 
-      <div class="current-weather card">
+      <div class="current-weather card display-none">
         <h2>Current Weather<span class="last-updated"> as of 07:24 PM</span></h2>
         <div class="content">
           <p class="current-location">Cebu City, Philippines</p>
           <img id="currentConditionIcon" class="current-condition-icon" src="http://cdn.weatherapi.com/weather/128x128/night/200.png" alt="Patchy rain possible">
-          <p id="currentTemp" class="current-temp">27°<span>C</span></p>
+          <div id="currentTemp" class="current-temp">
+            <p>27°<span>C</span></p>
+          </div>
           <p id="currentFeelsLike" class="current-feels-like">Feels like 31°</p>
           <p id="currentConditionText" class="current-condition-text">Partly Cloudy</p>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card display-none">
         <h2>Today's Conditions</h2>
         <div class="conditions">
           <div class="content">
@@ -119,7 +121,7 @@
         </div>
       </div>
 
-      <div class="forecast card">
+      <div class="forecast card display-none">
         <h2>Today's Forecast</h2>
         <div class="content">
           <div>
@@ -160,7 +162,7 @@
         <button class="details-button">Next Hours</button>
       </div>
 
-      <div class="forecast card">
+      <div class="forecast card display-none">
         <h2>Hourly Forecast</h2>
         <div class="content">
           <div>
@@ -201,12 +203,12 @@
         <button class="details-button">Next 24 Hours</button>
       </div>
 
-      <div class="forecast card">
+      <div class="forecast card display-none">
         <h2>Daily Forecast</h2>
         <div class="content">
           <div>
             <p>Today</p>
-            <p class="temp">27°</p>
+            <p class="temp">27°<span>/26°</span></p>
             <img class="forecast-condition-icon" src="http://cdn.weatherapi.com/weather/128x128/day/116.png" alt="Patchy rain possible">
             <div class="forecast-precipitation">
               <p>--</p>
@@ -214,7 +216,7 @@
           </div>
           <div>
             <p>August 14</p>
-            <p class="temp">31°</p>
+            <p class="temp">31°<span>/26°</span></p>
             <img class="forecast-condition-icon" src="http://cdn.weatherapi.com/weather/128x128/day/116.png" alt="Patchy rain possible">
             <div class="forecast-precipitation">
               <p>--</p>
@@ -222,7 +224,7 @@
           </div>
           <div>
             <p>August 15</p>
-            <p class="temp">26°</p>
+            <p class="temp">26°<span>/26°</span></p>
             <img class="forecast-condition-icon" src="http://cdn.weatherapi.com/weather/128x128/night/200.png" alt="Patchy rain possible">
             <div class="forecast-precipitation">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>water</title><path d="M12,20A6,6 0 0,1 6,14C6,10 12,3.25 12,3.25C12,3.25 18,10 18,14A6,6 0 0,1 12,20Z" /></svg>
@@ -233,7 +235,7 @@
         <button class="details-button">Next 2 Days</button>
       </div>
 
-      <div class="detail-weather card">
+      <div class="detail-weather card display-none">
         <h2>Daily Weather<span class="last-updated"> as of 07:24 PM</span></h2>
         <p class="current-location">Cebu City, Philippines</p>
         <h3>3-Day Forecast</h3>
@@ -662,7 +664,7 @@
         
       </div>
 
-      <div class="detail-weather card">
+      <div class="detail-weather card display-none">
         <h2>Hourly Weather<span class="last-updated"> as of 07:24 PM</span></h2>
         <p class="current-location">Cebu City, Philippines</p>
         <h3>Sunday, August 13</h3>

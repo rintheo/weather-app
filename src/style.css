@@ -63,7 +63,7 @@ svg {
 
 .card {
   padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.65);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 1.5rem;
 }
@@ -182,14 +182,14 @@ svg {
   color: hsl(207, 99%, 43%);
 }
 
-.card .last-updated {
+.card h2 > span {
   font-size: 1.15rem;
   font-weight: 400;
 }
 
 .current-weather .content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.25fr;
   grid-template-areas:
     "location location"
     "icon     temp"
@@ -211,17 +211,21 @@ svg {
 
 .current-temp {
   grid-area: temp;
+}
+
+.current-temp > p {
   position: relative;
   top: 0.5rem;
+  width: min-content;
   color: hsl(207, 99%, 43%);
   font-size: 5rem;
   font-weight: 500;
 }
 
-.current-temp span {
+.current-temp > p > span {
   position: absolute;
-  bottom: 1.2rem;
-  left: 6.1rem;
+  bottom: 0.8rem;
+  right: 0.5rem;
   color: hsl(207, 99%, 43%);
   font-size: 1.5rem;
   font-weight: 300;
@@ -337,6 +341,14 @@ svg {
 
 .forecast .temp {
   font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.forecast .temp > span {
+  color: hsl(235, 16%, 60%);
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 .forecast-condition-icon {
@@ -355,6 +367,14 @@ svg {
 @media (max-width: 600px) {
   .forecast .content > div > p:first-child {
     font-size: 1rem;
+  }
+  
+  .forecast .temp {
+    font-size: 2rem;
+  }
+  
+  .forecast .temp > span {
+    font-size: 1.5rem;
   }
 
   .temp {
