@@ -71,6 +71,22 @@ const showCardLoadingAnimation = () => new Promise((resolve, reject) => {
   }
 });
 
+const cancelCardLoadingAnimation = () => new Promise((resolve, reject) => {
+  if (isInitialCardVisible) {
+    initialCard.classList.remove('hide-content');
+    initialCard.classList.remove('loading');
+    resolve();
+  } else {
+    document
+      .querySelectorAll('.main > .card:not(.header)')
+      .forEach((card) => {
+        card.classList.remove('hide-content');
+        card.classList.remove('loading');
+        card.addEventListener('transitionend', () => resolve(), { once: true });
+      });
+  }
+});
+
 const generateCurrentWeatherCard = (response) => {
   const card = document.createElement('div');
   card.classList.add('current-weather', 'card', 'hidden');
@@ -519,12 +535,24 @@ const generateCards = (response) => {
 
 const search = async (e) => {
   if (e.key !== 'Enter') return;
+  const searchBox = e.currentTarget;
   const query = e.currentTarget.value;
   await showCardLoadingAnimation();
   const response = await getWeather(query);
+  if (Object.prototype.hasOwnProperty.call(response, 'error')) {
+    console.log(response);
+    searchBox.parentNode.classList.add('error');
+    searchBox.addEventListener('input', () => {
+      searchBox.parentNode.classList.remove('error');
+    });
+    cancelCardLoadingAnimation();
+    searchBox.value = '';
+    return;
+  }
   await clearCards();
   updatePageTitle(response);
   generateCards(response);
+  searchBox.value = '';
   if (isInitialCardVisible) isInitialCardVisible = false;
 };
 
