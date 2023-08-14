@@ -1,11 +1,11 @@
 import './style.css';
 import dateFormat from 'date-fns/format';
-import dateAdd from 'date-fns/add';
 import getWeather from './weather';
 
-const initialSearchBoxContainer = document.querySelector('.initial');
+const initialCard = document.querySelector('.initial');
 const searchBoxes = document.querySelectorAll('.search-box');
 const mainContainer = document.querySelector('.main');
+let isInitialCardVisible = true;
 
 const updatePageTitle = (response) => {
   document.title = `${response.location.name}, ${response.location.country} | Tenki no Kyou`;
@@ -34,9 +34,46 @@ const getMoonPhaseSVG = (response) => {
   }
 };
 
+const fadeInCard = (card) => {
+  card.classList.add('fade-in');
+  card.addEventListener('animationend', () => {
+    card.classList.remove('fade-in');
+    card.classList.remove('hidden');
+  }, { once: true });
+};
+
+const fadeInCards = () => {
+  document
+    .querySelectorAll('.main > .card:not(.header)')
+    .forEach((card) => {
+      fadeInCard(card);
+    });
+};
+
+const fadeInHeader = () => {
+  const header = document.querySelector('.header.card');
+  fadeInCard(header);
+};
+
+const showCardLoadingAnimation = () => new Promise((resolve, reject) => {
+  if (isInitialCardVisible) {
+    initialCard.classList.add('hide-content');
+    initialCard.classList.add('loading');
+    resolve();
+  } else {
+    document
+      .querySelectorAll('.main > .card:not(.header)')
+      .forEach((card) => {
+        card.classList.add('hide-content');
+        card.classList.add('loading');
+        card.addEventListener('transitionend', () => resolve(), { once: true });
+      });
+  }
+});
+
 const generateCurrentWeatherCard = (response) => {
   const card = document.createElement('div');
-  card.classList.add('current-weather', 'card');
+  card.classList.add('current-weather', 'card', 'hidden');
 
   const h2 = document.createElement('h2');
   h2.textContent = 'Current Weather';
@@ -88,7 +125,7 @@ const generateCurrentWeatherCard = (response) => {
 
 const generateTodaysConditionCard = (response) => {
   const card = document.createElement('div');
-  card.classList.add('card');
+  card.classList.add('card', 'hidden');
 
   const h2 = document.createElement('h2');
   h2.textContent = "Today's Conditions";
@@ -235,7 +272,7 @@ const generateTodaysConditionCard = (response) => {
 
 const generateTodaysForecastCard = (response) => {
   const card = document.createElement('div');
-  card.classList.add('forecast', 'card');
+  card.classList.add('forecast', 'card', 'hidden');
 
   const h2 = document.createElement('h2');
   h2.textContent = "Today's Forecast";
@@ -307,7 +344,7 @@ const generateTodaysForecastCard = (response) => {
 
 const generateHourlyForecastCard = (response) => {
   const card = document.createElement('div');
-  card.classList.add('forecast', 'card');
+  card.classList.add('forecast', 'card', 'hidden');
 
   const h2 = document.createElement('h2');
   h2.textContent = 'Hourly Forecast';
@@ -380,7 +417,7 @@ const generateHourlyForecastCard = (response) => {
 
 const generateDailyForecastCard = (response) => {
   const card = document.createElement('div');
-  card.classList.add('forecast', 'card');
+  card.classList.add('forecast', 'card', 'hidden');
 
   const h2 = document.createElement('h2');
   h2.textContent = 'Daily Forecast';
@@ -445,42 +482,53 @@ const generateDailyForecastCard = (response) => {
   mainContainer.appendChild(card);
 };
 
-const clearAllCards = () => {
-  document
-    .querySelectorAll('.main > .card:not(.header)')
-    .forEach((card) => card.remove());
-};
-
-const generateWeatherForecast = (response) => {
-  if (!initialSearchBoxContainer.classList.contains('display-none')) {
-    initialSearchBoxContainer.classList.add('display-none');
-    mainContainer.classList.remove('display-none');
+const clearCards = () => new Promise((resolve, reject) => {
+  if (isInitialCardVisible) {
+    fadeInHeader();
+    initialCard.classList.remove('loading');
+    initialCard.classList.add('fade-out');
+    initialCard.addEventListener('animationend', () => {
+      initialCard.classList.remove('fade-out');
+      initialCard.classList.add('display-none');
+      mainContainer.classList.remove('display-none');
+      resolve();
+    }, { once: true });
+  } else {
+    document
+      .querySelectorAll('.main > .card:not(.header)')
+      .forEach((card) => {
+        card.classList.remove('loading');
+        card.classList.add('fade-out');
+        card.addEventListener('animationend', () => {
+          card.classList.remove('fade-out');
+          card.remove();
+          resolve();
+        }, { once: true });
+      });
   }
+});
 
-  clearAllCards();
-  updatePageTitle(response);
+const generateCards = (response) => {
   generateCurrentWeatherCard(response);
   generateTodaysConditionCard(response);
   generateTodaysForecastCard(response);
   generateHourlyForecastCard(response);
   generateDailyForecastCard(response);
+  fadeInCards();
 };
 
-const search = (e) => {
+const search = async (e) => {
   if (e.key !== 'Enter') return;
   const query = e.currentTarget.value;
-  e.currentTarget.value = '';
-
-  getWeather(query)
-    .then(
-      (response) => {
-        console.log(response);
-        generateWeatherForecast(response);
-      },
-      (error) => { console.log(error); },
-    );
+  await showCardLoadingAnimation();
+  const response = await getWeather(query);
+  await clearCards();
+  updatePageTitle(response);
+  generateCards(response);
+  if (isInitialCardVisible) isInitialCardVisible = false;
 };
 
 searchBoxes.forEach((searchBox) => {
   searchBox.addEventListener('keypress', search);
+  searchBox.value = '';
 });
