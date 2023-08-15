@@ -337,6 +337,10 @@ svg {
   padding: 1rem 0 0 0;
 }
 
+.conditions .content:only-child {
+  padding: 0;
+}
+
 .conditions .content:not(:last-child) {
   border-bottom-width: 1px;
   border-bottom-style: solid;
