@@ -562,6 +562,70 @@ svg {
   font-size: 2rem;
 }
 
+.return-to-top-container {
+  position: fixed;
+  bottom: -5rem;
+  width: 100%;
+  max-width: 960px;
+  padding: 1rem;
+}
+
+.show-return-to-top-button {
+  animation: show-return-to-top-button 0.25s ease-out 0s 1 forwards normal;
+}
+
+.hide-return-to-top-button {
+  animation: hide-return-to-top-button 0.25s ease-in 0s 1 forwards normal;
+}
+
+.return-to-top-button {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  background: rgba(255, 255, 255, 0.65);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.return-to-top-button > svg {
+  position: absolute;
+  width: 4.5rem;
+}
+
+.return-to-top-button > svg:hover {
+  fill: hsl(207, 99%, 46%);
+}
+
+.return-to-top-button > svg:active {
+  fill: hsl(207, 99%, 49%);
+}
+
+@keyframes show-return-to-top-button {
+  0% {
+    bottom: -5rem;
+  }
+
+  100% {
+    bottom: 5rem;
+  }
+}
+
+@keyframes hide-return-to-top-button {
+  0% {
+    bottom: 5rem;
+  }
+
+  100% {
+    bottom: -5rem;
+  }
+}
+
 @media (max-width: 600px) {
   .site-container {
     padding: 0;
@@ -610,8 +674,6 @@ svg {
 }
 
 @media (max-width: 500px) {
-
-
   .forecast .temp {
     font-size: 2rem;
   }

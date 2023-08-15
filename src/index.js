@@ -5,7 +5,16 @@ import getWeather from './weather';
 const initialCard = document.querySelector('.initial');
 const searchBoxes = document.querySelectorAll('.search-box');
 const mainContainer = document.querySelector('.main');
+const returnToTopButton = document.querySelector('.return-to-top-button');
 let isInitialCardVisible = true;
+
+const scrollToTop = () => {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth',
+  });
+};
 
 const updatePageTitle = (response) => {
   document.title = `${response.location.name}, ${response.location.country} | Tenki no Kyou`;
@@ -396,9 +405,9 @@ const generateHourlyForecastCard = (response) => {
           detailCard.classList.remove('display-none');
           fadeInCard(detailCard);
           isDoneOnce = true;
+          scrollToTop();
         }
       });
-    window.scrollTo(0, 0);
   });
 
   const currentHour = (new Date(response.current.last_updated)).getHours();
@@ -487,7 +496,6 @@ const generateHourlyWeatherCard = (response) => {
         otherCard.classList.remove('display-none');
         fadeInCard(otherCard);
       });
-    window.scrollTo(0, 0);
   });
 
   h2.appendChild(span);
@@ -683,7 +691,7 @@ const generateDailyForecastCard = (response) => {
           isDoneOnce = true;
         }
       });
-    window.scrollTo(0, 0);
+    scrollToTop();
   });
 
   const forecastInput = [];
@@ -769,7 +777,6 @@ const generateDailyWeatherCard = (response) => {
         otherCard.classList.remove('display-none');
         fadeInCard(otherCard);
       });
-    window.scrollTo(0, 0);
   });
 
   h2.appendChild(span);
@@ -1182,6 +1189,21 @@ const search = async (e) => {
   searchBox.value = '';
   if (isInitialCardVisible) isInitialCardVisible = false;
 };
+
+const toggleReturnToTopButtonVisibility = () => {
+  const returnToTopContainer = document.querySelector('.return-to-top-container');
+  if (document.body.getBoundingClientRect().top < 0) {
+    returnToTopContainer.classList.add('show-return-to-top-button');
+    returnToTopContainer.classList.remove('hide-return-to-top-button');
+  } else {
+    returnToTopContainer.classList.remove('show-return-to-top-button');
+    returnToTopContainer.classList.add('hide-return-to-top-button');
+  }
+};
+
+returnToTopButton.addEventListener('click', scrollToTop);
+
+window.addEventListener('scroll', toggleReturnToTopButtonVisibility);
 
 searchBoxes.forEach((searchBox) => {
   searchBox.addEventListener('keypress', search);
