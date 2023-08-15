@@ -34,7 +34,7 @@ const getMoonPhaseSVG = (response) => {
   }
 };
 
-const fadeInCard = (card) => new Promise((resolve, reject) => {
+const fadeInCard = (card) => new Promise((resolve) => {
   card.classList.add('fade-in');
   card.addEventListener('animationend', () => {
     card.classList.remove('fade-in');
@@ -47,7 +47,7 @@ const fadeInCard = (card) => new Promise((resolve, reject) => {
 const fadeInCards = () => {
   document
     .querySelectorAll('.main > .card:not(.header):not(.display-none)')
-    .forEach((card, index) => {
+    .forEach((card) => {
       fadeInCard(card);
     });
 };
@@ -57,7 +57,7 @@ const fadeInHeader = () => {
   fadeInCard(header);
 };
 
-const fadeOutCard = (card) => new Promise((resolve, reject) => {
+const fadeOutCard = (card) => new Promise((resolve) => {
   card.classList.remove('loading');
   card.classList.add('fade-out');
   card.addEventListener('animationend', () => {
@@ -67,7 +67,7 @@ const fadeOutCard = (card) => new Promise((resolve, reject) => {
   }, { once: true });
 });
 
-const showCardLoadingAnimation = () => new Promise((resolve, reject) => {
+const showCardLoadingAnimation = () => new Promise((resolve) => {
   if (isInitialCardVisible) {
     initialCard.classList.add('hide-content');
     initialCard.classList.add('loading');
@@ -83,7 +83,7 @@ const showCardLoadingAnimation = () => new Promise((resolve, reject) => {
   }
 });
 
-const cancelCardLoadingAnimation = () => new Promise((resolve, reject) => {
+const cancelCardLoadingAnimation = () => new Promise((resolve) => {
   if (isInitialCardVisible) {
     initialCard.classList.remove('hide-content');
     initialCard.classList.remove('loading');
@@ -404,7 +404,7 @@ const generateHourlyForecastCard = (response) => {
   const currentHour = (new Date(response.current.last_updated)).getHours();
   const forecastInput = [];
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 4; i += 1) {
     let day = 0;
     let hour = currentHour + i;
 
@@ -494,13 +494,13 @@ const generateHourlyWeatherCard = (response) => {
   card.appendChild(h2);
   card.appendChild(currentLocation);
 
-  for (let day = 0; day < 3; day++) {
+  for (let day = 0; day < 3; day += 1) {
     const h3 = document.createElement('h3');
     h3.textContent = dateFormat(new Date(response.forecast.forecastday[day].date), 'EEEE, MMMM d');
 
     card.appendChild(h3);
 
-    for (let hour = 0; hour < 24; hour++) {
+    for (let hour = 0; hour < 24; hour += 1) {
       const detailEntry = document.createElement('div');
       detailEntry.classList.add('detail-entry');
 
@@ -560,7 +560,7 @@ const generateHourlyWeatherCard = (response) => {
         {
           svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>weather-windy</title><path d="M4,10A1,1 0 0,1 3,9A1,1 0 0,1 4,8H12A2,2 0 0,0 14,6A2,2 0 0,0 12,4C11.45,4 10.95,4.22 10.59,4.59C10.2,5 9.56,5 9.17,4.59C8.78,4.2 8.78,3.56 9.17,3.17C9.9,2.45 10.9,2 12,2A4,4 0 0,1 16,6A4,4 0 0,1 12,10H4M19,12A1,1 0 0,0 20,11A1,1 0 0,0 19,10C18.72,10 18.47,10.11 18.29,10.29C17.9,10.68 17.27,10.68 16.88,10.29C16.5,9.9 16.5,9.27 16.88,8.88C17.42,8.34 18.17,8 19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14H5A1,1 0 0,1 4,13A1,1 0 0,1 5,12H19M18,18H4A1,1 0 0,1 3,17A1,1 0 0,1 4,16H18A3,3 0 0,1 21,19A3,3 0 0,1 18,22C17.17,22 16.42,21.66 15.88,21.12C15.5,20.73 15.5,20.1 15.88,19.71C16.27,19.32 16.9,19.32 17.29,19.71C17.47,19.89 17.72,20 18,20A1,1 0 0,0 19,19A1,1 0 0,0 18,18Z"></path></svg>',
           description: 'Wind',
-          value: `${response.forecast.forecastday[day].hour[hour].wind_kph} kph ${response.forecast.forecastday[0].hour[hour].wind_dir}`,
+          value: `${response.forecast.forecastday[day].hour[hour].wind_kph} kph ${response.forecast.forecastday[day].hour[hour].wind_dir}`,
         },
         {
           svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>water-circle</title><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 19C9.24 19 7 16.76 7 14C7 10.67 12 5.04 12 5.04S17 10.67 17 14C17 16.76 14.76 19 12 19Z"></path></svg>',
@@ -608,12 +608,12 @@ const generateHourlyWeatherCard = (response) => {
       // end
 
       detailEntry.addEventListener('click', () => {
-        const expand = document.querySelector(`.expand-${day}-${hour}`);
+        const selectedExpand = document.querySelector(`.expand-${day}-${hour}`);
         if (conditions.classList.contains('display-none')) {
-          expand.outerHTML = `<svg class="expand-${day}-${hour}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-up</title><path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" /></svg>`;
+          selectedExpand.outerHTML = `<svg class="expand-${day}-${hour}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-up</title><path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" /></svg>`;
           conditions.classList.remove('display-none');
         } else {
-          expand.outerHTML = `<svg class="expand-${day}-${hour}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg>`;
+          selectedExpand.outerHTML = `<svg class="expand-${day}-${hour}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg>`;
           conditions.classList.add('display-none');
         }
         fadeInCard(conditions);
@@ -621,8 +621,8 @@ const generateHourlyWeatherCard = (response) => {
 
       button.addEventListener('click', () => {
         setTimeout(() => {
-          const expand = document.querySelector(`.expand-${day}-${hour}`);
-          expand.outerHTML = `<svg class="expand-${day}-${hour}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg>`;
+          const selectedExpand = document.querySelector(`.expand-${day}-${hour}`);
+          selectedExpand.outerHTML = `<svg class="expand-${day}-${hour}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg>`;
           conditions.classList.add('display-none');
           fadeInCard(conditions);
         }, 500);
@@ -688,7 +688,7 @@ const generateDailyForecastCard = (response) => {
 
   const forecastInput = [];
 
-  for (let day = 0; day < 3; day++) {
+  for (let day = 0; day < 3; day += 1) {
     forecastInput[day] = {
       description: dateFormat(new Date(response.forecast.forecastday[day].date), 'LLLL d'),
       day,
@@ -777,7 +777,7 @@ const generateDailyWeatherCard = (response) => {
   card.appendChild(currentLocation);
   card.appendChild(h3);
 
-  for (let day = 0; day < 3; day++) {
+  for (let day = 0; day < 3; day += 1) {
     const detailEntry = document.createElement('div');
     detailEntry.classList.add('detail-entry');
 
@@ -1078,12 +1078,12 @@ const generateDailyWeatherCard = (response) => {
     dayNight.appendChild(nightConditions);
 
     detailEntry.addEventListener('click', () => {
-      const expand = document.querySelector(`.expand-${day}`);
+      const selectedExpand = document.querySelector(`.expand-${day}`);
       if (dayNight.classList.contains('display-none')) {
-        expand.outerHTML = `<svg class="expand-${day}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-up</title><path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" /></svg>`;
+        selectedExpand.outerHTML = `<svg class="expand-${day}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-up</title><path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" /></svg>`;
         dayNight.classList.remove('display-none');
       } else {
-        expand.outerHTML = `<svg class="expand-${day}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg>`;
+        selectedExpand.outerHTML = `<svg class="expand-${day}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg>`;
         dayNight.classList.add('display-none');
       }
       fadeInCard(dayNight);
@@ -1091,8 +1091,8 @@ const generateDailyWeatherCard = (response) => {
 
     button.addEventListener('click', () => {
       setTimeout(() => {
-        const expand = document.querySelector(`.expand-${day}`);
-        expand.outerHTML = `<svg class="expand-${day}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg>`;
+        const selectedExpand = document.querySelector(`.expand-${day}`);
+        selectedExpand.outerHTML = `<svg class="expand-${day}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg>`;
         dayNight.classList.add('display-none');
         fadeInCard(dayNight);
       }, 500);
@@ -1125,7 +1125,7 @@ const generateDailyWeatherCard = (response) => {
   mainContainer.appendChild(card);
 };
 
-const clearCards = () => new Promise((resolve, reject) => {
+const clearCards = () => new Promise((resolve) => {
   if (isInitialCardVisible) {
     fadeInHeader();
     fadeOutCard(initialCard);
@@ -1185,5 +1185,4 @@ const search = async (e) => {
 
 searchBoxes.forEach((searchBox) => {
   searchBox.addEventListener('keypress', search);
-  searchBox.value = '';
 });
