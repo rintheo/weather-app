@@ -94,26 +94,6 @@ svg {
   animation: fade-in 0.25s ease-in-out 0s 1 forwards normal;
 }
 
-.fade-in:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.fade-in:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.fade-in:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
-.fade-in:nth-child(5) {
-  animation-delay: 0.4s;
-}
-
-.fade-in:nth-child(6) {
-  animation-delay: 0.5s;
-}
-
 .fade-out {
   animation: fade-out 0.25s ease-in-out 0s 1 forwards normal;
 }
@@ -531,6 +511,7 @@ svg {
   grid-template-columns: 1.2fr 1fr 2.75fr 1fr 2fr 2rem;
   align-items: center;
   gap: 0 1rem;
+  cursor: pointer;
 }
 
 .detail-entry .temp {
