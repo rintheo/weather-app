@@ -1,6 +1,7 @@
 import './style.css';
 import dateFormat from 'date-fns/format';
 import getWeather from './weather';
+import logoImage from './images/logo.png';
 
 const initialCard = document.querySelector('.initial');
 const searchBoxes = document.querySelectorAll('.search-box');
@@ -1200,6 +1201,13 @@ const toggleReturnToTopButtonVisibility = () => {
     returnToTopContainer.classList.add('hide-return-to-top-button');
   }
 };
+
+const loadLogoImage = (() => {
+  const logoImages = document.querySelectorAll('.logo-image');
+  logoImages.forEach((logo) => {
+    logo.src = logoImage;
+  });
+})();
 
 returnToTopButton.addEventListener('click', scrollToTop);
 

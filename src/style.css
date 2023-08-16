@@ -61,6 +61,27 @@ svg {
   opacity: 0;
 }
 
+.logo {
+  position: relative;
+  left: -2rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 4rem;
+  width: 4rem;
+}
+
+.main .logo {
+  left: -0.5rem
+}
+
+.main .logo img {
+  height: 2rem;
+  width: 2rem;
+}
+
 .logo h1 {
   font-family: 'Yellowtail', cursive;
   color: hsl(207, 99%, 43%);
@@ -144,7 +165,7 @@ svg {
   font-size: 5rem;
 }
 
-.initial .logo p {
+.initial p {
   font-size: 1.25rem;
   margin-bottom: 2rem;
 }
@@ -688,6 +709,15 @@ svg {
 }
 
 @media (max-width: 500px) {
+  .logo {
+    left: -1.25rem
+  }
+
+  .logo img {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
   .forecast .temp {
     font-size: 2rem;
   }
@@ -700,7 +730,7 @@ svg {
     font-size: 3.5rem;
   }
 
-  .initial .logo p {
+  .initial p {
     font-size: 1rem;
   }
 
