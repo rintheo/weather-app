@@ -17,7 +17,7 @@ const scrollToTop = () => {
 };
 
 const updatePageTitle = (response) => {
-  document.title = `${response.location.name}, ${response.location.country} | Tenki no Kyou`;
+  document.title = `${response.location.name}, ${response.location.country} | Weatherin`;
 };
 
 const getMoonPhaseSVG = (response) => {
@@ -525,7 +525,7 @@ const generateHourlyWeatherCard = (response) => {
       conditionImg.src = `http://${response.forecast.forecastday[day].hour[hour].condition.icon}`;
       conditionImg.alt = response.forecast.forecastday[day].hour[hour].condition.text;
 
-      const conditionP = document.createElement('img');
+      const conditionP = document.createElement('p');
       conditionP.textContent = response.forecast.forecastday[day].hour[hour].condition.text;
 
       const precipitation = document.createElement('div');
@@ -802,7 +802,7 @@ const generateDailyWeatherCard = (response) => {
     temp.textContent = `${response.forecast.forecastday[day].day.maxtemp_c}°`;
 
     const tempSpan = document.createElement('span');
-    tempSpan.textContent = `/${response.forecast.forecastday[day].day.mintemp_c}°`;
+    tempSpan.textContent = ` ${response.forecast.forecastday[day].day.mintemp_c}°`;
 
     const condition = document.createElement('div');
 
@@ -810,7 +810,7 @@ const generateDailyWeatherCard = (response) => {
     conditionImg.src = `http://${response.forecast.forecastday[day].day.condition.icon}`;
     conditionImg.alt = response.forecast.forecastday[day].day.condition.text;
 
-    const conditionP = document.createElement('img');
+    const conditionP = document.createElement('p');
     conditionP.textContent = response.forecast.forecastday[day].day.condition.text;
 
     const precipitation = document.createElement('div');
