@@ -30,22 +30,26 @@ svg {
 }
 
 .site-container {
+  position: relative;
   min-height: 100vh;
   padding: 0 2rem 2rem 2rem;
   display: flex;
   justify-content: center;
 }
 
-.background {
+.site-container::before {
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
+  min-height: var(--original-viewport-height);
   width: 100vw;
   background-image: url('./images/background.jpg');
-  background-position: center;
+  background-position: top ;
   background-size: cover;
   z-index: -1;
+  transition: 0.25s;
 }
 
 .max-width {
@@ -669,6 +673,11 @@ svg {
 @media (max-width: 600px) {
   .site-container {
     padding: 0;
+  }
+
+  .initial.card {
+    position: fixed;
+    top: 10rem;
   }
   
   .header.card, 
